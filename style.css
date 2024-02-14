@@ -1,0 +1,54 @@
+p {
+    color: #ADD8E6; /* This is the hex color code for light blue */
+}
+body {
+    background-color: #ADD8E6; /* This is the hex color code for light blue */
+.fo2sh {
+    font-size: 20px;
+}
+python
+Download
+Copy code
+from bs4 import BeautifulSoup
+
+html_code = '''
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Website development for Cristiano Ronaldo - brandit</title>
+    <link rel="stylesheet" href="https://www.brandit.pt/wp-content/cache/min/1/280423774fce12e57b27a04908554042.css" data-minify="1">
+</head>
+<body class="page-template-default page page-id-3451">
+    <div id="page" class="hfeed site">
+        <header id="masthead" class="site-header">
+            <!-- Your header code here -->
+        </header>
+        <div id="content" class="site-content">
+            <main id="main" class="site-main">
+                <article id="post-3451" class="post-3451 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <header class="entry-header">
+                        <h1 class="entry-title">Website development for Cristiano Ronaldo - brandit</h1>
+                    </header>
+                    <div class="entry-content">
+                        <p>Website development for Cristiano Ronaldo - brandit</p>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
+'''
+
+soup = BeautifulSoup(html_code, 'html.parser')
+
+# Find the paragraph with the text "Website development for Cristiano Ronaldo - brandit"
+paragraph = soup.find('p', text='Website development for Cristiano Ronaldo - brandit')
+
+# Change the text of the paragraph to "fo2sh"
+paragraph.string = "fo2sh"
+
+# Print the modified HTML code
+print(soup.prettify())
